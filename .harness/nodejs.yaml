@@ -1,0 +1,37 @@
+pipeline:
+  name: nodejs
+  identifier: nodejs
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github_OAuth_1710930653549
+        repoName: https://github.com/anadi7078/nodejs-app-mss
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
+                    command: |-
+                      npm install
+                      node app.js
