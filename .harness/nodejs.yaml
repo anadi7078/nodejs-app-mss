@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: account.Github_OAuth_1710930653549
-        repoName: anadi7078/nodejs-app-mss
+        repoName: anadi7078/nodejs-app-mss/
         build: <+input>
   stages:
     - stage:
